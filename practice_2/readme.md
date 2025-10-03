@@ -53,13 +53,15 @@ else:
 ### Задача 2
 ```python 
 def check_winners(scores: list[int], student_score: str):
-    if student_score in sorted(scores, reverse=True)[:3]:
+    if student_score in sorted(scores)[-3:]:
         print('Вы в тройке победителей!')
-    else:
+    elif student_score in scores:
         print('Вы не попали в тройку победителей.')
+    else:
+      print('Ваши баллы не найдены в списке.')
 
-scores = input('Введите баллы через пробел: ').split(' ')
-student_score = input('Введите свои быллы: ')
+scores = [int(x) for x in input('Введите баллы через пробел: ').split(' ')]
+student_score = int(input('Введите свои баллы: '))
 
 check_winners(scores, student_score)
 ```
