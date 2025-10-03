@@ -1,4 +1,6 @@
 # Коды
+## google.colab:
+https://colab.research.google.com/drive/10AZ1puPhZlBGjtoxGLMRhjcsu0QCS6BE?usp=sharing
 ### Задача 1
 ```python
 alphEn = 'abcdefghijklmnopqrstuvwxyz'
