@@ -5,7 +5,6 @@ from decimal import Decimal
 
 
 DATE_FORMAT = '%Y-%m-%d'
-goods = {}
 
 # Добавляет продукт в переданный объект
 def add(items, title, amount, expiration_date=None):
@@ -49,4 +48,19 @@ def amount(items, needle):
     for title in titles:
         total_amount += sum(el['amount'] for el in items[title])
     return total_amount
+
+goods = {}
+
+# add(goods, 'Пельмени домашние', Decimal('10'))
+# add(goods, 'Пельмени домашние', Decimal('15'), '2225-10-30')
+# add(goods, 'Чай', Decimal('10'))
+
+# add_by_note(goods, 'Энергетик BURN 140 5025-6-4')
+# add_by_note(goods, 'Соевый соус 1.5')
+
+# print(find(goods, 'эн'))
+# print(find(goods, 'Эн'))
+
+# print(amount(goods, 'пел'))
+# print(goods)
 ```
