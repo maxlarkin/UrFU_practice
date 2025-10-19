@@ -3,7 +3,7 @@
 ### Задачи:
 
 ```python
-Task 1
+'''Task 1'''
 # Класс Book для объекта книги
 class Book:
 
@@ -25,7 +25,7 @@ print(test.info())
 ```
 
 ```python
-Task 2
+'''Task 2'''
 # Класс Book для объекта книги
 class Book:
 
@@ -59,7 +59,7 @@ print(test_ebook.info())
 ```
 
 ```python
-Task 3
+'''Task 3'''
 class Book:
     # Задание заголовка, автора и года при инициализации
     def __init__(self, title: str, author: str, year: str):
