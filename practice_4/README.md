@@ -2,7 +2,8 @@
 
 ### Задачи:
 
-```Task 1
+```python
+Task 1
 # Класс Book для объекта книги
 class Book:
 
@@ -23,7 +24,8 @@ test = Book('Kapital', 'Karl Marks', '19**')
 print(test.info())
 ```
 
-```Task 2
+```python
+Task 2
 # Класс Book для объекта книги
 class Book:
 
@@ -56,7 +58,8 @@ test_ebook = Ebook('EBOOK', 'Lenin', '19**-19**', 'electron')
 print(test_ebook.info())
 ```
 
-```Task 3
+```python
+Task 3
 class Book:
     # Задание заголовка, автора и года при инициализации
     def __init__(self, title: str, author: str, year: str):
@@ -108,7 +111,8 @@ test_from_string = Book.from_string('title;anyone;1843')
 print(test_from_string == test_book)
 ```
 
-``` Task 4
+```python
+Task 4
 from abc import ABC, abstractmethod
 
 
@@ -177,7 +181,7 @@ test_book.print_info()
 
 # Практики
 
-```
+```python
 '''Практика 1'''
 class Employee:
     # присваивание базовых аттрибутов классу
@@ -221,7 +225,7 @@ print(manager.salary())
 print(developer.salary())
 ```
 
-```
+```python
 '''Практика 2'''
 class Transport:
     def __init__(self, speed):
@@ -274,7 +278,7 @@ for obj in [transport, car, bus, train]:
     print(getInfo(obj))
 ```
 
-```
+```python
 '''Практика 3'''
 from decimal import Decimal
 
