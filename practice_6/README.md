@@ -1,5 +1,5 @@
 # tasks:
-находятся в папке practice_6
+находятся в папке practice_6/tasks
 
 # Практики:
 находятся в папке practice_6/practics
