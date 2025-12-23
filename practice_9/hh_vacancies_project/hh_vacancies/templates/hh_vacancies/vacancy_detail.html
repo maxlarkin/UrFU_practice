@@ -1,0 +1,18 @@
+{% extends 'hh_vacancies/base.html' %}
+
+{% block title %}{{ vacancy.name }}{% endblock %}
+
+{% block content %}
+    <h2>{{ vacancy.name }}</h2>
+    <p><strong>Работодатель:</strong> {{ vacancy.employer_name }}</p>
+    <p><strong>Город:</strong> {{ vacancy.area_name }}</p>
+    <p><strong>Зарплата:</strong> <span class="salary">{{ vacancy.salary_range }}</span></p>
+    <p><strong>Дата публикации:</strong> {{ vacancy.published_at|date:"d.m.Y H:i" }}</p>
+    <p><strong>Описание:</strong></p>
+    <div style="border: 1px solid #ddd; padding: 10px; background: #fafafa;">
+        {{ vacancy.description|safe }}
+    </div>
+    <br>
+    <a href="{{ vacancy.url }}" target="_blank">Перейти на сайт HeadHunter</a> |
+    <a href="{% url 'vacancy_list' %}">Назад к списку</a>
+{% endblock %}

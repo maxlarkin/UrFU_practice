@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Вакансии HeadHunter{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background: #f0f0f0; padding: 10px; margin-bottom: 20px; }
+        .vacancy { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; }
+        .salary { color: green; font-weight: bold; }
+        .filters { margin-bottom: 20px; padding: 15px; background: #f9f9f9; }
+        .pagination { text-align: center; margin-top: 20px; }
+        .pagination a { margin: 0 5px; padding: 5px 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 Вакансии HeadHunter</h1>
+        <a href="{% url 'vacancy_list' %}">Главная</a> |
+        <a href="{% url 'admin:index' %}" target="_blank">Админка</a>
+    </div>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

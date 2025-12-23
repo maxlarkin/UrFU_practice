@@ -1,0 +1,46 @@
+{% extends 'hh_vacancies/base.html' %}
+
+{% block title %}Каталог вакансий{% endblock %}
+
+{% block content %}
+    <h2>🔎 Поиск вакансий</h2>
+
+    <form method="GET" class="filters">
+        <input type="text" name="q" value="{{ query }}" placeholder="Поиск по названию или описанию">
+        <input type="text" name="area" value="{{ area }}" placeholder="Город">
+        <input type="number" name="min_salary" value="{{ min_salary }}" placeholder="ЗП от">
+        <input type="number" name="max_salary" value="{{ max_salary }}" placeholder="ЗП до">
+        <button type="submit">Искать</button>
+    </form>
+
+    <h3>Результаты ({{ page_obj.paginator.count }})</h3>
+
+    {% for vacancy in page_obj %}
+        <div class="vacancy">
+            <h4><a href="{% url 'vacancy_detail' vacancy.pk %}">{{ vacancy.name }}</a></h4>
+            <p><strong>Работодатель:</strong> {{ vacancy.employer_name }}</p>
+            <p><strong>Город:</strong> {{ vacancy.area_name }}</p>
+            <p><strong>Зарплата:</strong> <span class="salary">{{ vacancy.salary_range }}</span></p>
+            <p><strong>Дата публикации:</strong> {{ vacancy.published_at|date:"d.m.Y H:i" }}</p>
+            <a href="{{ vacancy.url }}" target="_blank">Перейти на HH</a>
+        </div>
+    {% empty %}
+        <p>Ничего не найдено.</p>
+    {% endfor %}
+
+    <!-- Пагинация -->
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+
+        <span>Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
+        {% endif %}
+    </div>
+
+{% endblock %}
